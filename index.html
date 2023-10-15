@@ -19,21 +19,21 @@
         document.documentElement.requestFullscreen();
       });
       editor.addEventListener("focus", () => {
-        console.log("focused");
+        alert("focused");
       });
       document.addEventListener("visibilitychange", function () {
         if (document.hidden) {
-          console.log("Changed");
+          alert("Changed");
         } else {
           // The user has returned to the page.
         }
       });
 
       editor.addEventListener("blur", () => {
-        console.log("blured");
+        alert("blured");
       });
       window.addEventListener("beforeunload", function () {
-        console.log("unload");
+        alert("unload");
       });
     </script>
   </body>
