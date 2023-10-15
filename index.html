@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">Start</button>
+    <div
+      id="editor"
+      tabindex="0"
+      style="width: 500px; height: 80vh; border: 1px solid black"
+    ></div>
+    <script>
+      const button = document.getElementById("btn");
+      const editor = document.getElementById("editor");
+      button.addEventListener("click", () => {
+        document.documentElement.requestFullscreen();
+      });
+      editor.addEventListener("focus", () => {
+        console.log("focused");
+      });
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+          console.log("Changed");
+        } else {
+          // The user has returned to the page.
+        }
+      });
+
+      editor.addEventListener("blur", () => {
+        console.log("blured");
+      });
+      window.addEventListener("beforeunload", function () {
+        console.log("unload");
+      });
+    </script>
+  </body>
+</html>
